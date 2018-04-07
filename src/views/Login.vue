@@ -89,7 +89,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     next(vm => {
       if (vm.$store.getters['user/currentUser'].name) {
-        vm.$router.push({ name: 'user' })
+        //vm.$router.push({ name: 'user' })
       } else {
         next()
       }
@@ -99,7 +99,7 @@ export default {
     // Getting local user automatic filling
     if (localStorage.getItem('name')) {
       this.$store.commit({
-        type: 'getLocalUser'
+        type: 'user/getLocalUser'
       })
     }
   }

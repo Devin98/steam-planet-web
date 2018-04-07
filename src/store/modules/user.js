@@ -37,24 +37,25 @@ const actions = {
   login({ commit }, payload) {
     console.log(payload)
     return axios
-      .post(hostip + '/user/login', {
+      .post(hostip + '/iv1/user/login', {
         name: payload.name,
         pwd: payload.pwd
       })
-      .then(res => {
-        console.log(res)
-        localStorage.setItem('name', res.data.name)
-        localStorage.setItem('token', res.data.token)
+      .then(res => res.data.returnValue)
+      .then(value => {
+        console.log(value)
+        localStorage.setItem('name', value.name)
+        localStorage.setItem('token', value.token)
         commit({
           type: 'setUser',
-          name: res.data.name,
-          token: res.data.token
+          name: value.name,
+          token: value.token
         })
       })
   },
   register({ commit }, payload) {
     return axios
-      .post(hostip + '/user/register', {
+      .post(hostip + '/iv1/user/register', {
         name: payload.name,
         pwd: payload.pwd
       })
