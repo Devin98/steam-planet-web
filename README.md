@@ -2,7 +2,7 @@
 
 **这是一个音乐爱好者的音乐推送App**
   
-后端部分[点这里](https://github.com/dreamhuan/steam-plant-server)
+后端部分[点这里](https://github.com/Devin98/steam-planet-server)
 
 ## 前端技术栈
 
