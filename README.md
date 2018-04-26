@@ -18,7 +18,7 @@
 
 **确保node环境且版本≥8**
 
-1. `git clone git@github.com:Uniquec/steam-plant-web.git`
+1. `git clone git@github.com:Devin98/steam-planet-web.git`
 1. `cd steam-plant-web`
 1. `yarn`
 1. `yarn dev`
