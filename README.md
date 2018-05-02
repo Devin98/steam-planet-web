@@ -2,7 +2,7 @@
 
 **这是一个音乐爱好者的音乐推送App**
   
-后端部分[点这里](https://github.com/dreamhuan/steam-plant-server)
+后端部分[点这里](https://github.com/Devin98/steam-planet-server)
 
 ## 前端技术栈
 
@@ -18,7 +18,7 @@
 
 **确保node环境且版本≥8**
 
-1. `git clone git@github.com:Uniquec/steam-plant-web.git`
-1. `cd steam-plant-web`
+1. `git clone git@github.com:Devin98/steam-planet-web.git`
+1. `cd steam-planet-web`
 1. `yarn`
 1. `yarn dev`
