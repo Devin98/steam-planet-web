@@ -49,11 +49,11 @@ export default {
   computed: {},
   methods: {
     showPwd: function() {
-      this.isShow = this.isShow ? 0 : 1
+      this.isShow = this.isShow ? 0 : 1;
       this.isShow ? (this.passType = 'text') : (this.passType = 'password')
     },
     beforeSubmit: function() {
-      this.isDisabled = true
+      this.isDisabled = true;
       this.loginState = '正在注册...'
     },
     onSuccess: function(res) {
