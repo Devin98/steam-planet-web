@@ -4,9 +4,8 @@
     <van-nav-bar title="每周歌单"  left-arrow class="header">
       <van-icon name="search" slot="right" />
     </van-nav-bar>
-
-    <van-list >
-      <van-cell v-for="value in song"><img class="play" src="../assets/play.png"><p class="font16">{{value.songName}}</p><p class="font10">{{value.author}}</p></van-cell>
+    <van-list>
+      <van-cell v-for="value in song" class="list"><img class="play" src="../assets/play.png"><p class="font16">{{value.songName}}</p><p class="font10">{{value.author}}</p></van-cell>
     </van-list>
 
   </div>
@@ -31,11 +30,13 @@
         data() {
             return {
               song:[
-                {songName:'dsada',author:'1234'},
-                {songName:'dsada',author:'1234'},
-                {songName:'dsada',author:'1234'},
-                {songName:'dsada',author:'1234'},
-                {songName:'dsada',author:'1234'}
+                {songName:'阴天快乐',author:'陈奕迅'},
+                {songName:'阴天快乐',author:'陈奕迅'},
+                {songName:'阴天快乐',author:'陈奕迅'},
+                {songName:'阴天快乐',author:'陈奕迅'},
+                {songName:'阴天快乐',author:'陈奕迅'},
+                {songName:'阴天快乐',author:'陈奕迅'},
+                {songName:'阴天快乐',author:'陈奕迅'}
               ]
             }
         }
@@ -53,7 +54,7 @@
     vertical-align: middle;
   }
   .font16{
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
   }
   .font10{
@@ -69,14 +70,18 @@
     margin-top: 3px;
   }
 
-
-
   .van-cell{
     line-height: 3px;
   }
 
 </style>
 <style>
+  body{
+    background-color: #EFEFE9;
+  }
+  .list{
+    background-color: #FAFAFA;
+  }
   .van-icon-arrow:before{
     color: white;
   }
