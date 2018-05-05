@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <canvas id="starts" class="canvas"></canvas>
-    <img src="../assets/stream-planet-logo.png" class="myself">
+    <img src="../assets/steam-planet-logo.png" class="myself">
     <div class="button topic">话题</div>
     <div class="button friend">交友</div>
     <div class="button radio">电台</div>
