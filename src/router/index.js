@@ -20,7 +20,8 @@ import HotComments from '../views/HotComments.vue'
 import Topic from '../views/Topic.vue'
 import SpecificSong from '../views/SpecificSong.vue'
 import CreateMusicList from '../views/CreateMusicList.vue'
-
+import Friend from '../views/Friend.vue'
+import MyMusicList from '../views/MyMusicList.vue'
 
 
 
@@ -128,6 +129,16 @@ export default new Router({
       path:'/createMusicList',
       name:'createMusicList',
       component: CreateMusicList
+    },
+    {
+      path:'/friend',
+      name:'friend',
+      component: Friend
+    },
+    {
+      path:'/myMusicList',
+      name:'myMusicList',
+      component: MyMusicList
     },
     {
       path: '*',

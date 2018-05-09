@@ -1,7 +1,7 @@
 <template>
 <div>
 
-  <van-nav-bar title="反馈与建议"  left-arrow class="header">
+  <van-nav-bar title="反馈与建议"  left-arrow class="header" @click-left="onClickLeft()">
   </van-nav-bar>
 
   <div>
@@ -9,9 +9,9 @@
     <br>
     <br>
     <br>
-    <van-checkbox :key="" name="" v-model="checked1" class="check check1">产品建议</van-checkbox>
-    <van-checkbox :key="" name="" v-model="checked2" class="check check2">程序出错</van-checkbox>
-    <van-checkbox :key="" name="" v-model="checked3" class="check check3">音乐问题</van-checkbox>
+    <van-checkbox :key="" name="" v-model="adviceChecked1" class="check check1">产品建议</van-checkbox>
+    <van-checkbox :key="" name="" v-model="adviceChecked2" class="check check2">程序出错</van-checkbox>
+    <van-checkbox :key="" name="" v-model="adviceChecked3" class="check check3">音乐问题</van-checkbox>
   </div>
   <br>
   <br>
@@ -35,7 +35,7 @@
   <br>
   <div style="width:100%; height: 2px;background-color: #efefe9;"></div>
 
-  <input placeholder="请输入你的联系方式" class="tel">
+  <input placeholder="请输入你的联系方式" class="tel" v-model="adviceTel">
   <br>
   <br>
   <div style="width:100%; height:250px;background-color: #efefe9;">
@@ -65,7 +65,6 @@
   import { Uploader } from 'vant';
   import { Button } from 'vant';
 
-
   Vue.use(Button);
   Vue.use(Uploader);
   Vue.use(Checkbox).use(CheckboxGroup);
@@ -79,9 +78,13 @@
         components: {},
         data() {
             return {
-              checked1: false,
-              checked2: false,
-              checked3: false,
+
+
+              adviceChecked1: false,
+              adviceChecked2: false,
+              adviceChecked3: false,
+              adviceTel:'',
+
             }
         },
         methods: {
@@ -91,7 +94,14 @@
 
           submitAdvice(){
             console.log('提交意见成功');
+            this.$router.push({path:'/home'});
+
           },
+
+          onClickLeft(){
+            this.$router.push({path:'/home'});
+          },
+
           upLoaderAdvice(){
             console.log('上传照片成功');
           }

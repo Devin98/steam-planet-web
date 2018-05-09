@@ -2,11 +2,11 @@
   <div id="home">
     <canvas id="starts" class="canvas"></canvas>
     <img src="../assets/steam-planet-logo.png" class="myself">
-    <div class="button topic">话题</div>
-    <div class="button friend">交友</div>
-    <div class="button radio">电台</div>
-    <div class="button song">歌单</div>
-    <div class="button music">音乐</div>
+    <div @click="topic()" class="button topic">话题</div>
+    <div @click="friend()" class="button friend">交友</div>
+    <div @click="radio()" class="button radio">电台</div>
+    <div @click="Song()" class="button song">歌单</div>
+    <div @click="music()" class="button music">音乐</div>
 
   </div>
 
@@ -178,7 +178,26 @@ export default {
   },
 
   components: {},
-  methods: {}
+  methods: {
+    topic(){
+      this.$router.push({path:'/home'});
+    },
+    friend(){
+      this.$router.push({path:'/'});
+    },
+    radio(){
+      this.$router.push({path:'/home'});
+    },
+    Song(){
+      this.$router.push({path:'/home'});
+    },
+    music(){
+      this.$router.push({path:'/home'});
+    }
+
+
+
+  }
 };
 </script>
 
