@@ -13,7 +13,10 @@
     { "id":10, "title": "我是posts10", "author": "typicode" }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    { "id": 1, "body": "你在前面看风景，我在后面看你。你说风景很美，你不舍回头，我沉默的笑了笑。下雨天，你愿意淋雨，我却想为你打把伞。我把背影留给你，你却把沉默留给我。", "author": "123" },
+    { "id": 2, "body": "我要露出点小马脚来，好让你看出我喜欢你", "author": "123" },
+    { "id": 3, "body": "Can't wait to see you", "author": "123" },
+    { "id": 4, "body": "这是我的手背，这是我的脚背，你是我的宝贝", "author": "123" }
   ],
   "profile": { "name": "typicode" }
 }

@@ -17,6 +17,7 @@ import Chat from '../views/Chat.vue'
 import FriendsList from '../views/FriendsList.vue'
 import QuarterTopic from '../views/QuarterTopic.vue'
 import HotComments from '../views/HotComments.vue'
+import Topic from '../views/Topic.vue'
 import SpecificSong from '../views/SpecificSong.vue'
 import CreateMusicList from '../views/CreateMusicList.vue'
 
@@ -112,6 +113,11 @@ export default new Router({
       path:'/hotComments',
       name:'hotComments',
       component: HotComments
+    },
+    {
+      path:'/topic',
+      name:'topic',
+      component: Topic
     },
     {
       path:'/specificSong',
