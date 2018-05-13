@@ -1,18 +1,19 @@
 <template>
   <div id="home">
-    <canvas id="starts" class="canvas"></canvas>
+    <canvas id="canvas" class="canvas"></canvas>
     <img src="../assets/steam-planet-logo.png" class="myself">
-    <div @click="topic()" class="button topic">话题</div>
-    <div @click="friend()" class="button friend">交友</div>
-    <div @click="radio()" class="button radio">电台</div>
-    <div @click="Song()" class="button song">歌单</div>
-    <div @click="music()" class="button music">音乐</div>
+    <div class="button topic">话题</div>
+    <div class="button friend">交友</div>
+    <div class="button radio">电台</div>
+    <div class="button song">歌单</div>
+    <div class="button music">音乐</div>
 
   </div>
 
 </template>
 
 <script>
+// @ is an alias to /src
 import Vue from "vue";
 import { Button } from "vant";
 
@@ -156,48 +157,32 @@ export default {
     function animateDots() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       moveDots();
-      //connectDots();
+      connectDots();
       drawDots();
 
       requestAnimationFrame(animateDots);
     }
 
     //----------------------跟着鼠标动--------------------
-//    document.getElementById("home").addEventListener("mousemove", function(e) {
-//      mousePosition.x = e.pageX;
-//      mousePosition.y = e.pageY;
-//    });
-//
-//    document.getElementById("home").addEventListener("mouseleave", function(e) {
-//      mousePosition.x = canvas.width / 2;
-//      mousePosition.y = canvas.height / 2;
-//    });
+    document.getElementById("home").addE
+
+
+    ventListener("mousemove", function(e) {
+      mousePosition.x = e.pageX;
+      mousePosition.y = e.pageY;
+    });
+
+    document.getElementById("home").addEventListener("mouseleave", function(e) {
+      mousePosition.x = canvas.width / 2;
+      mousePosition.y = canvas.height / 2;
+    });
     //----------------------跟着鼠标动--------------------
+
     createDots();
     requestAnimationFrame(animateDots);
   },
-
   components: {},
-  methods: {
-    topic(){
-      this.$router.push({path:'/home'});
-    },
-    friend(){
-      this.$router.push({path:'/'});
-    },
-    radio(){
-      this.$router.push({path:'/home'});
-    },
-    Song(){
-      this.$router.push({path:'/home'});
-    },
-    music(){
-      this.$router.push({path:'/home'});
-    }
-
-
-
-  }
+  methods: {}
 };
 </script>
 
@@ -207,9 +192,7 @@ export default {
   width: 100vw;
   height: 100vh;
   color: #fff;
-  /*background: rgba(11, 29, 175, 0.95);*/
-  background-image: linear-gradient(#020303 20%, #242867 60%, #effdff 90%);
-  z-index: -2;
+  background: rgba(7, 17, 27, 0.95);
 
   .canvas {
     position: absolute;
@@ -228,16 +211,7 @@ export default {
     width:50%;
     background-position: center center;
     animation: shake 30s ease-in-out infinite;
-    opacity: 1;
-    z-index: 2;
   }
-  div{
-    z-index: 2;
-  }
-
-
-
-
 
   .button{
     color: lightgoldenrodyellow;
@@ -249,21 +223,15 @@ export default {
     text-align: center;
     vertical-align: middle;
     padding: 2px;
-    border-radius: 3px;
-    background-color: #aaa;
+
 
   }
-
-  .button:hover{
-    box-shadow: 0 0 15px 0 #aaa !important;
-  }
-
 
   .topic{
     position: absolute;
     top: 180px;
     left: 100px;
-    animation: shake 120s, topic-move 5s ease-in-out infinite;
+    animation: shake 20s ease-in-out infinite;
 
   }
 
@@ -271,7 +239,7 @@ export default {
     position: absolute;
     top: 290px;
     left: 20px;
-    animation: shake 122s ease-in-out infinite;
+    animation: shake 22s ease-in-out infinite;
 
   }
 
@@ -279,7 +247,7 @@ export default {
     position: absolute;
     top: 220px;
     left: 280px;
-    animation: shake 110s ease-in-out infinite;
+    animation: shake 10s ease-in-out infinite;
 
 
   }
@@ -288,7 +256,7 @@ export default {
     position: absolute;
     top: 340px;
     left: 255px;
-    animation: shake 125s ease-in-out infinite;
+    animation: shake 25s ease-in-out infinite;
 
 
 
@@ -298,62 +266,41 @@ export default {
     position: absolute;
     top: 365px;
     left: 110px;
-    animation: shake 115s ease-in-out infinite;
+    animation: shake 15s ease-in-out infinite;
 
   }
 
-  @keyframes topic-move{
-
-   0%{
-     background-color: #aaa
-
-
-   }
-   50%{
-      background-color: lightblue;
-    }
-   100%{
-      background-color: #aaa;
-    }
-
-  }
-
-  @keyframes friend-move{
-
-
-  }
-
-  @keyframes radio-move{
-
-  }
-
-  @keyframes song-move{
-
-  }
-
-  @keyframes music-move{
-
-  }
 
   @keyframes shake {
     0%{
-
+      /*transform-origin: 50% 0;*/
       transform: rotate(90deg);
+     transform: translate(-5px -3px);
     }
     20%{
+      /*transform-origin: 50% 0;*/
       transform: rotate(180deg);
+      transform: translate(-10px -6px);
     }
     40%{
+      /*transform-origin: 50% 0;*/
       transform: rotate(0deg);
+      transform: translate(0px 0px);
     }
     60%{
+      /*transform-origin: 50% 0;*/
       transform: rotate(-90deg);
+      transform: translate(5px 3px);
     }
     80%{
+      /*transform-origin: 50% 0;*/
       transform: rotate(-180deg);
+      transform: translate(10px 6px);
     }
     100%{
+      /*transform-origin: 50% 0;*/
       transform: rotate(0deg);
+      transform: translate(0px 0px);
     }
   }
 
@@ -361,3 +308,8 @@ export default {
 
 }
 </style>
+
+
+
+
+
