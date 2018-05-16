@@ -1,8 +1,7 @@
 <template>
-  <ion-app>
-    <router-view></router-view>
-  </ion-app>
-
+  <div id="app">
+    <router-view/>
+  </div>
 </template>
 
 <script>

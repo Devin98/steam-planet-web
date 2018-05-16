@@ -33,6 +33,7 @@ const mutations = {
   }
 }
 
+
 const actions = {
   login({ commit }, payload) {
     console.log(payload)

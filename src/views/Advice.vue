@@ -38,7 +38,7 @@
   <input placeholder="请输入你的联系方式" class="tel" v-model="adviceTel">
   <br>
   <br>
-  <div style="width:100%; height:250px;background-color: #efefe9;">
+  <div style="width:100%; height:350px;background-color: #efefe9;">
     <br>
     <br>
     <br>
