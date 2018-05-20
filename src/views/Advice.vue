@@ -79,7 +79,6 @@
         data() {
             return {
 
-
               adviceChecked1: false,
               adviceChecked2: false,
               adviceChecked3: false,
