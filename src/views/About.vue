@@ -188,6 +188,7 @@
         width: 260px;
         border: none;
         height: 44px;
+        text-indent: 1em;
 
       }
 
@@ -259,8 +260,11 @@
 </style>
 
 <style>
-  body{
+  html{
     background: url("../assets/starSky.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 200%;
+    -moz-background-size:100% 100%;
 
   }
 
