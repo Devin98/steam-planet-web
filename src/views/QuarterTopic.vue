@@ -46,6 +46,14 @@
             console.log(index);
             console.log(this.Topic[index-1].content);
 
+            let data={
+              TopicContent:this.Topic[index-1].content
+            }
+
+            console.log(data);
+
+            this.$router.push({path:'/topic'});
+
           },
 
 

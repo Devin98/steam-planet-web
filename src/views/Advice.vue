@@ -19,7 +19,7 @@
   <div class="blank"></div>
 
   <div>
-    <span class="body-p">您的反馈是我们成长的动力</span>
+    <textarea class="body-p" placeholder="您的反馈是我们成长的动力" rows="5" v-model="adviceContent"></textarea>
   </div>
   <br>
   <br>
@@ -83,6 +83,8 @@
               adviceChecked2: false,
               adviceChecked3: false,
               adviceTel:'',
+              adviceContent:'',
+              typeAdvice:[],
 
             }
         },
@@ -92,9 +94,25 @@
           },
 
           submitAdvice(){
-            console.log('提交意见成功');
-            this.$router.push({path:'/home'});
+//            console.log('提交意见成功');
+//            this.$router.push({path:'/home'});
+            if(this.adviceChecked1===true){
+              this.typeAdvice[0]='产品建议';
+            }
+            if(this.adviceChecked2===true){
+              this.typeAdvice[1]='程序出错';
+            }
+            if(this.adviceChecked3===true){
+              this.typeAdvice[2]='音乐问题';
+            }
 
+
+            let data = {
+              type:this.typeAdvice,
+              content:this.adviceContent,
+              phone: this.adviceTel,
+            }
+            console.log(data)
           },
 
           onClickLeft(){
@@ -146,6 +164,7 @@
     left:20px;
     top: 190px;
     color: #6d7978;
+    width:80%;
   }
 
   img{
