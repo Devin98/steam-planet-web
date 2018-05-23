@@ -1,14 +1,17 @@
 <template>
 
-  <div>
-    <van-nav-bar
-      class="nav"
-      title="话题"
-      right-text="往期"
-      left-arrow
-      @click-left="onClickLeft()"
-      @click-right="onClickRight()"
-    ></van-nav-bar>
+  <div style="background-color: #EFEFE9">
+    <div class="nav">
+      <van-nav-bar
+        class="nav"
+        title="话题"
+        right-text="往期"
+        left-arrow
+        fixed="true"
+        @click-left="onClickLeft"
+        @click-right="onClickRight"
+      />
+    </div>
     <div class="topic">
       <p>话题内容</p>
       <div class="topicContent">
@@ -21,19 +24,20 @@
 
       </div>
     </div>
-    <div class="timeComments">
-      <p>实时评论</p>
-      <div class="comments">
+    <ion-scroll>
+      <div class="timeComments">
+        <p>实时评论</p>
+        <div class="comments">
 
+        </div>
       </div>
-    </div>
-    <div class="publish">
-      <van-field
-        placeholder="请输入评论"
-      >
-      </van-field>
-      <van-icon name="chat"/>
-    </div>
+      <div class="publish">
+        <van-field
+          placeholder="请输入评论"
+        >
+        </van-field>
+      </div>
+    </ion-scroll>
   </div>
 </template>
 
@@ -60,24 +64,22 @@
 
 </script>
 
-<style lang="less" scoped>
+<style lang="less" scoped type="text/less">
   .nav {
     background-color: #521d99;
   }
 
   .topic {
+    margin-top: 46px;
     background-color: white;
     text-align: left;
-    box-shadow: 5px 5px 3px #cccccc;;
     height: 92px;
-
-  }
-
-  .topic p {
-    margin-top: 0px;
-    font-size: 14px;
-    padding-left: 15px;
-    padding-top: 5px;
+    p {
+      margin-top: 0px;
+      font-size: 14px;
+      padding-left: 15px;
+      padding-top: 5px;
+    }
   }
 
   .topicContent p {
@@ -89,41 +91,32 @@
 
   .hotComments, .timeComments {
     text-align: left;
-  }
-
-  .hotComments p {
-    margin: 0;
-    font-size: 14px;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-
-  .timeComments p {
-    margin: 0;
-    font-size: 14px;
-    padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    p {
+      margin: 0;
+      font-size: 14px;
+      padding-left: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
   }
 
   .comments {
     background-color: white;
     text-align: left;
-    box-shadow: 5px 5px 3px #cccccc;;
-    height: 210px;
+    height: 300px;
   }
-  .publish{
-    background-color: white;
+
+  .publish {
+    border-top: 2px #EFEFE9 solid;
+    position: fixed;
+    bottom: 0;
+    /*background-color: red;*/
     text-align: left;
-    height: 51px;
+    height: 40px;
+    width: 100%;
   }
 </style>
 <style>
-  body {
-    background-color: #efefe9;
-  }
-
   .van-nav-bar__title {
     color: white;
   }
@@ -138,15 +131,13 @@
 
   .van-field {
     display: inline-block;
-    width: 90%;
+    width: 100%;
     padding-top: 0;
     padding-bottom: 0;
 
   }
-  .van-icon{
-    display: inline-block;
+  .van-field__control{
+    height: 35px;
   }
-  [class*=van-hairline]::after{
-    border-bottom: 0 !important;
-  }
+
 </style>
