@@ -6,9 +6,9 @@
       title="话题"
       right-text="往期"
       left-arrow
-      @click-left="onClickLeft"
-      @click-right="onClickRight"
-    />
+      @click-left="onClickLeft()"
+      @click-right="onClickRight()"
+    ></van-nav-bar>
     <div class="topic">
       <p>话题内容</p>
       <div class="topicContent">
@@ -50,10 +50,10 @@
     name: "Topic",
     methods: {
       onClickLeft() {
-        Toast('返回');
+        this.$router.go(-1);
       },
       onClickRight() {
-        Toast('按钮');
+
       }
     }
   }
