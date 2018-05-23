@@ -1,10 +1,8 @@
 <template>
     <div>
-      <van-nav-bar title="标题" left-arrow class="header">
-        <van-icon name="search" slot="right" />
-      </van-nav-bar>
+      <van-nav-bar title="标题" left-arrow class="header"  @click-left="onClickLeft()"></van-nav-bar>
       <van-list>
-        <van-cell class="list" v-for="value in Friends">
+        <van-cell class="list" v-for="value in Friends" v-on:click="Chat()">
           <div class="Sculpture" ><img src=""></div>
           <span class="FriendsName">{{value.FriendsName}}</span>
           <span class="Signature"><br>{{value.Signature}}</span>
@@ -18,19 +16,26 @@
   import { NavBar } from 'vant';
   import { List } from 'vant';
   import { Cell} from 'vant';
+  import VanNode from "vant/packages/utils/node";
+
+
 
   Vue.use(NavBar);
   Vue.use(List);
   Vue.use(Cell);
 
 
-
     export default {
       name: 'FriendsList',
       methods: {
-
+        Chat(){
+          this.$router.push({path:'/chat'});
+        },
+        onClickLeft(){
+          this.$router.push({path:'/home'});
+        },
       },
-      components: {},
+      components: {VanNode},
       data() {
         return {
           Friends:[
@@ -45,7 +50,6 @@
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 
   .list{
