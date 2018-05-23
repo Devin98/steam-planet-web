@@ -163,6 +163,7 @@
       color: #787d7c;
       margin-right:80px;
       word-break: break-all;
+      text-align: left;
 
     }
 
@@ -213,9 +214,6 @@
     color: white;
   }
 
-  body{
-    background-color: #efefe9;
-  }
 
 
 .van-icon {

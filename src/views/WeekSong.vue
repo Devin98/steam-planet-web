@@ -2,7 +2,6 @@
 <template>
   <div>
     <van-nav-bar title="每周歌单"  left-arrow class="header">
-      <van-icon name="search" slot="right" />
     </van-nav-bar>
     <van-list>
       <van-cell v-for="value in song" class="list"><img class="play" src="../assets/play.png"><p class="font16">{{value.songName}}</p><p class="font10">{{value.author}}</p></van-cell>
@@ -18,6 +17,8 @@
   import { NavBar } from 'vant';
   import { List } from 'vant';
   import {Cell} from 'vant';
+
+
   Vue.use(List);
   Vue.use(Cell);
   Vue.use(NavBar);
@@ -76,9 +77,7 @@
 
 </style>
 <style>
-  body{
-    background-color: #EFEFE9;
-  }
+
   .list{
     background-color: #FAFAFA;
   }

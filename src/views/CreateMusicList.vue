@@ -106,9 +106,7 @@
     color: white;
   }
 
-  body{
-    background-color: #efefe9;
-  }
+
 
   .van-radio .van-icon-check  {
     color: #9fa7a6;

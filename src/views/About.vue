@@ -58,12 +58,6 @@
              type="password"
              name="pwd">
 
-      <br>
-
-      <!--<input placeholder="验证码" class="input "-->
-             <!--v-model="tel"-->
-             <!--type="text"-->
-             <!--name="tel">-->
 
       <br>
 
@@ -123,10 +117,13 @@
 
           login(){
             console.log('login');
+            this.$router.push({path:'/home'})
           },
 
           register(){
             console.log('register');
+            this.$router.push({path:'/home'})
+
           },
 
         }

@@ -19,6 +19,14 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+  import { List } from 'vant';
+  import { Cell, CellGroup } from 'vant';
+
+  Vue.use(Cell).use(CellGroup);
+  Vue.use(List);
+
+
     export default {
         name: 'QuarterTopic',
         components: {},
@@ -93,8 +101,6 @@
   .van-icon-arrow:before{
     color:white;
   }
-  body{
-    background-color: #efefe9;
-  }
+
 </style>
 

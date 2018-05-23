@@ -22,6 +22,7 @@ import SpecificSong from '../views/SpecificSong.vue'
 import CreateMusicList from '../views/CreateMusicList.vue'
 import Friend from '../views/Friend.vue'
 import MyMusicList from '../views/MyMusicList.vue'
+import MyLikes from '../views/MyLikes.vue'
 
 
 
@@ -139,6 +140,11 @@ export default new Router({
       path:'/myMusicList',
       name:'myMusicList',
       component: MyMusicList
+    },
+    {
+      path:'/myLikes',
+      name:'myLikes',
+      component: MyLikes
     },
     {
       path: '*',

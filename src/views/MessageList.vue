@@ -91,7 +91,5 @@
     color: white;
   }
 
-  body{
-    background-color: #efefe9;
-  }
+
 </style>

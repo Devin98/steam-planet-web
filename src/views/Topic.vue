@@ -120,9 +120,6 @@
   }
 </style>
 <style>
-  body {
-    background-color: #efefe9;
-  }
 
   .van-nav-bar__title {
     color: white;
