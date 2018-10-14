@@ -23,6 +23,7 @@ import CreateMusicList from '../views/CreateMusicList.vue'
 import Friend from '../views/Friend.vue'
 import MyMusicList from '../views/MyMusicList.vue'
 import MyLikes from '../views/MyLikes.vue'
+import Home1 from '../views/Home1.0.vue'
 
 
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/home1',
+      name: 'home1',
+      component: Home1
     },
     {
       path: '/register',

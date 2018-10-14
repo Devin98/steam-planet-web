@@ -1,12 +1,17 @@
 <template>
     <div>
 
-      <van-nav-bar title="季度话题"  left-arrow class="header-QuarterTopic" @click-left="onClickLeft()">
+      <van-nav-bar title="季度话题"
+                   left-arrow
+                   class="header-QuarterTopic"
+                   @click-left="onClickLeft">
       </van-nav-bar>
 
       <div class="topic">
         <van-list>
-          <van-cell class="list" v-for="(value,index) in Topic" @click="toTopic(index+1)">
+          <van-cell class="list"
+                    v-for="(value,index) in Topic"
+                    @click="toTopic(index+1)">
             <span class="date" >{{value.date}}:</span>
             <span class="content">{{value.content}}</span>
           </van-cell>
@@ -32,21 +37,16 @@
         components: {},
         data() {
             return {
-              Topic:[
-                {date:'1.11',content:'jkasgakfgaksfga'},
-                {date:'1.11',content:'sasf'},
-                {date:'1.11',content:'v'},
-                {date:'1.0',content:'zxv'},
-                {date:'1.5',content:'xcfg'},
-                {date:'1.3',content:'jkaszxgakfgaksfga'},
-                {date:'1.11',content:'vfd'},
-                {date:'1.4',content:'fghj'},
-                {date:'1.11',content:'rfc'},
-                {date:'1.11',content:'oihgc'},
-                {date:'1.11',content:'oihgc'},
-                {date:'1.11',content:'oihgc'},
-                 ]
+              Topic:[],
+              isWeekTopic:false,
             }
+        },
+        created(){
+          this.$store.dispatch({
+            type:'topic/getQuarterTopicList'
+          }).then(res=>{
+            this.Topic = this.$store.state.topic.quarter_topic_list;
+          })
         },
         methods: {
 
@@ -54,15 +54,24 @@
             console.log(index);
             console.log(this.Topic[index-1].content);
 
-            let data={
-              TopicContent:this.Topic[index-1].content
-            }
+            this.$store
+              .commit({
+                type:'topic/setCurrentTopic',
+                currentTopicId:this.Topic[index-1]._id,
+              });
 
-            console.log(data);
-
-            this.$router.push({path:'/topic'});
+            this.$router.push({
+              path:'/topic',
+              name:'topic',
+              params:{isWeekTopic:this.isWeekTopic}
+            });
 
           },
+
+          onClickLeft(){
+            this.$router.go(-1);
+          },
+
 
 
         }

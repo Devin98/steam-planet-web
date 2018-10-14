@@ -1,7 +1,7 @@
 <template>
     <div>
 
-      <van-nav-bar title="我的" left-arrow class="header-mine">
+      <van-nav-bar title="我的" left-arrow class="header-mine" @click-left="onClickLeft()">
       </van-nav-bar>
 
       <div class="mine">
@@ -72,18 +72,30 @@
             return {
               people:{
                 name:'周圣洁',
+                sex:'男',
+                address:'浙江杭州sadsd',
+                birthday:'2010-10-05',
                 message:'gjhgjhgjgjkjhgfdskjhgfdsjhgfdgdfsgdfgsdfgs',
               }
             }
         },
         methods: {
+          onClickLeft(){
+            this.$router.go(-1);
+          },
 
           editMyInformation(name){
+            this.$router.push({
+              path:'/myInformation',
+              name:'myInformation',
+              params:{people:this.people}
+            })
             console.log(name)
 
           },
 
           quit(){
+            this.$router.push({path:'./about'})
             console.log('quit!');
           },
 
@@ -92,22 +104,28 @@
           },
 
           toMySongList(){
+
+            this.$router.push({path:'./myMusicList'})
             console.log('toMySongList')
           },
 
           toMyMessage(){
+            this.$router.push({path:'/messageList'});
             console.log('toMyMessage')
           },
 
           toMyLike(){
+            this.$router.push({path:'/myLikes'});
             console.log('toMyLike')
           },
 
           toMyTest(){
+            this.$router.push({path:'/questionnaire'});
             console.log('toMyTest')
           },
 
           toAdvice(){
+            this.$router.push({path:'/advice'});
             console.log('toAdvice')
           }
 

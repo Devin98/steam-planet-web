@@ -112,11 +112,12 @@
               content:this.adviceContent,
               phone: this.adviceTel,
             }
-            console.log(data)
+            console.log(data);
+            this.$router.go(-1);
           },
 
           onClickLeft(){
-            this.$router.push({path:'/home'});
+            this.$router.go(-1);
           },
 
           upLoaderAdvice(){

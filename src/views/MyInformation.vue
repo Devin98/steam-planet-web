@@ -94,11 +94,19 @@
 
             }
         },
+      created(){
+          this.user = this.$route.params.people;
+      },
         methods: {
+          onClickLeft(){
+            this.$router.go(-1);
+          },
           changeHeadPortrait(){
             console.log('修改头像');
           },
           informationSubmit(){
+            this.$router.go(-1);
+
             console.log('提交');
           }
         }

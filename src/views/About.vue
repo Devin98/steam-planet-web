@@ -164,7 +164,7 @@
       background-color: white;
       position: absolute;
       margin-top: 15px;
-      left: 110px;
+      left: 30%;
     }
 
     .register-header-underline{
@@ -173,7 +173,7 @@
       background-color: white;
       position: absolute;
       margin-top: 15px;
-      left: 225px;
+      left: 60%;
     }
 
     .login{

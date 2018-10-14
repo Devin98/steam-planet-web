@@ -40,8 +40,10 @@
 <script>
 
   import Vue from 'vue';
+  import { NavBar } from 'vant';
   import {Icon} from 'vant';
 
+  Vue.use(NavBar);
   Vue.use(Icon);
   export default {
     name: 'HotComments',

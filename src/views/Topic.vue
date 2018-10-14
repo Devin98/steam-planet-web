@@ -7,37 +7,51 @@
         title="话题"
         right-text="往期"
         left-arrow
-        fixed="true"
+        :fixed="true"
         @click-left="onClickLeft"
         @click-right="onClickRight"
-      />
+      >
+      </van-nav-bar>
     </div>
+
     <div class="topic">
       <p>话题内容</p>
-      <div class="topicContent">
-        <p>说说你和他（她）的故事</p>
+
+
+      <div class="topicContent"
+           v-if="!isWeekTopic">
+        <p>{{Topic.content}}</p>
       </div>
+
+      <div class="topicContent"
+           v-if="isWeekTopic">
+        <p>{{weekTopic.content}}</p>
+        <!--<p>hghjgjh</p>-->
+      </div>
+
     </div>
+
+
     <div class="hotComments">
       <p>热门评论</p>
       <div class="comments">
 
       </div>
     </div>
-    <ion-scroll>
-      <div class="timeComments">
-        <p>实时评论</p>
-        <div class="comments">
 
-        </div>
+
+    <div class="timeComments">
+      <p>实时评论</p>
+      <div class="comments">
+
       </div>
-      <div class="publish">
-        <van-field
-          placeholder="请输入评论"
-        >
-        </van-field>
-      </div>
-    </ion-scroll>
+    </div>
+    <div class="publish">
+      <van-field placeholder="请输入评论">
+
+      </van-field>
+    </div>
+
   </div>
 </template>
 
@@ -52,14 +66,41 @@
   Vue.use(NavBar);
   export default {
     name: "Topic",
+    data(){
+      return{
+        isWeekTopic:'',
+//        Topic:'123',
+//        weekTopic:'',
+      }
+    },
+
+    computed:{
+      Topic(){
+        console.log(this.$store.getters['topic/getCurrentTopic'])
+        return this.$store.getters['topic/getCurrentTopic'];
+      },
+
+      weekTopic(){
+        console.log(this.$store.getters['topic/getWeekTopic'])
+        return this.$store.getters['topic/getWeekTopic'];
+      },
+
+    },
+
+    created(){
+      this.isWeekTopic = this.$route.params.isWeekTopic;
+    },
+
     methods: {
       onClickLeft() {
         this.$router.go(-1);
       },
       onClickRight() {
+        this.$router.push({path:'/quarterTopic'})
 
       }
-    }
+    },
+
   }
 
 </script>
@@ -73,7 +114,7 @@
     margin-top: 46px;
     background-color: white;
     text-align: left;
-    box-shadow: 5px 5px 3px #cccccc;;
+    box-shadow: 5px 5px 3px #cccccc;
     height: 92px;
     p {
       margin-top: 0px;
@@ -92,6 +133,7 @@
 
   .hotComments, .timeComments {
     text-align: left;
+    box-shadow: 5px 5px 3px #cccccc;
     p {
       margin: 0;
       font-size: 14px;
