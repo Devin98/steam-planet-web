@@ -1,6 +1,6 @@
 <template>
     <div>
-      <van-nav-bar title="消息列表" left-arrow class="header-messageList">
+      <van-nav-bar title="消息列表" left-arrow class="header-messageList" @click-left="onClickLeft()">
       </van-nav-bar>
 
       <div class="messageList">
@@ -42,6 +42,9 @@
           toChat(index){
             console.log(this.message[index].name);
 
+          },
+          onClickLeft(){
+            this.$router.go(-1)
           },
 
         }
@@ -91,7 +94,5 @@
     color: white;
   }
 
-  body{
-    background-color: #efefe9;
-  }
+
 </style>

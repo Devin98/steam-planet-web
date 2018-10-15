@@ -1,11 +1,19 @@
 
 <template>
   <div>
-    <van-nav-bar title="每周歌单"  left-arrow class="header">
-      <van-icon name="search" slot="right" />
+    <van-nav-bar title="每周歌单"
+                 left-arrow
+                 class="header"
+                 @click-left="onClickLeft">
     </van-nav-bar>
-    <van-list>
-      <van-cell v-for="value in song" class="list"><img class="play" src="../assets/play.png"><p class="font16">{{value.songName}}</p><p class="font10">{{value.author}}</p></van-cell>
+    <van-list >
+      <van-cell v-for="(value,index) in song"
+                class="list"
+                @click="ToMusicPlay(index)">
+        <img class="play" src="../assets/play.png">
+        <p class="font16">{{value.songName}}</p>
+        <p class="font10">{{value.author}}</p>
+      </van-cell>
     </van-list>
 
   </div>
@@ -18,6 +26,8 @@
   import { NavBar } from 'vant';
   import { List } from 'vant';
   import {Cell} from 'vant';
+
+
   Vue.use(List);
   Vue.use(Cell);
   Vue.use(NavBar);
@@ -25,21 +35,38 @@
 
     export default {
         name: 'WeekSong',
-        methods: {},
+
         components: {},
         data() {
             return {
-              song:[
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'}
-              ]
+              song:[]
             }
-        }
+        },
+        created() {
+          this.$store.dispatch({
+            type:'music/getMusicList'
+          }).then(res=>{
+            this.song = this.$store.state.music.music_list;
+          });
+        },
+        methods: {
+          ToMusicPlay(index){
+            console.log(this.song[index].songName);
+
+            this.$store
+              .commit({
+                type: 'music/setCurrentMusic',
+                currentMusicId: this.song[index]._id,
+              });
+            this.$router.push({path:'/musicPlay'});
+          },
+
+          onClickLeft(){
+            this.$router.go(-1);
+          },
+
+
+        },
     }
 </script>
 
@@ -76,9 +103,7 @@
 
 </style>
 <style>
-  body{
-    background-color: #EFEFE9;
-  }
+
   .list{
     background-color: #FAFAFA;
   }

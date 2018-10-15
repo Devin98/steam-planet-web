@@ -40,8 +40,10 @@
 <script>
 
   import Vue from 'vue';
+  import { NavBar } from 'vant';
   import {Icon} from 'vant';
 
+  Vue.use(NavBar);
   Vue.use(Icon);
   export default {
     name: 'HotComments',
@@ -100,7 +102,7 @@
     width: 100%;
     height: 130px;
     background-color: white;
-    box-shadow: 0 0 30px #866b99;
+    /*box-shadow: 0 0 30px #866b99;*/
 
     .content {
       text-indent: 1em;
@@ -153,8 +155,5 @@
     color: white;
   }
 
-  body {
-    background-color: #efefe9;
-  }
 
 </style>
