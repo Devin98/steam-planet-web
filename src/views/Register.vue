@@ -77,7 +77,7 @@ export default {
         .then(
           res => {
             console.log(res)
-            this.onSuccess(res)
+            this.onSuccess(res);
           },
           err => {
             console.log(err)

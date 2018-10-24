@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "data":"json-server -w api_server/db.json",
     "start": "vue-cli-service build",
     "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
