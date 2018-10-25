@@ -8,8 +8,8 @@
         right-text="往期"
         left-arrow
         :fixed="true"
-        @click-left="onClickLeft"
-        @click-right="onClickRight"
+        @click-left="onClickLeft()"
+        @click-right="onClickRight()"
       >
       </van-nav-bar>
     </div>
@@ -88,7 +88,9 @@
     },
 
     created(){
-      this.isWeekTopic = this.$route.params.isWeekTopic;
+      if(this.$route.params.isWeekTopic)
+        this.isWeekTopic = this.$route.params.isWeekTopic;
+      else this.isWeekTopic =true;
     },
 
     methods: {

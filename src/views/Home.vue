@@ -1,19 +1,27 @@
 <template>
   <div id="home">
     <!--<canvas id="canvas" class="canvas"></canvas>-->
-    <!--<img src="../assets/steam-planet-logo.png" class="myself">-->
-    <!--<div class="button topic" @click="ToWeekTopic()">话题</div>-->
-    <!--<div class="button friend"  @click="ToFriend()">交友</div>-->
-    <!--<div class="button radio">电台</div>-->
-    <!--<div class="button song" @click="ToMusic()">歌单</div>-->
-    <!--<div class="button music">音乐</div>-->
+    <img src="../assets/steam-planet-logo.png" class="myLogo">
 
-    <div class=" " @click="ToWeekTopic()">话题</div>
-    <div class=" "  @click="ToFriend()">交友</div>
-    <!--<div class=" ">电台</div>-->
-    <div class=" " @click="ToSongList()">歌单</div>
-    <div class=" " @click="ToMusic">音乐</div>
-    <div class=" " @click="ToMy()">我的</div>
+    <img src="../assets/mineLogo.png" @click="ToMy()" class="mine"/>
+    <img src="../assets/misicLogo.png" @click="ToMusic" class="music"/>
+    <img src="../assets/songListLogo.png" @click="ToSongList()" class="song"/>
+    <img src="../assets/topic.png" @click="ToWeekTopic()" class="topic" />
+    <img src="../assets/FridendLogo.png" @click="ToFriend()" class="friend" />
+
+
+    <div class="mineWord">我的</div>
+    <div class="musicWord">音乐</div>
+    <div class="songListWord">歌单</div>
+    <div class="topicWord">话题</div>
+    <div class="friendWord">交友</div>
+
+    <!--<div class=" " @click="ToWeekTopic()">话题</div>-->
+    <!--<div class=" "  @click="ToFriend()">交友</div>-->
+    <!--&lt;!&ndash;<div class=" ">电台</div>&ndash;&gt;-->
+    <!--<div class=" " @click="ToSongList()">歌单</div>-->
+    <!--<div class=" " @click="ToMusic">音乐</div>-->
+    <!--<div class=" " @click="ToMy()">我的</div>-->
 
   </div>
 
@@ -243,7 +251,16 @@ export default {
   width: 100vw;
   height: 100vh;
   color: #fff;
-  background: rgba(7, 17, 27, 0.95);
+
+  .myLogo{
+    float: left;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    width: 45%;
+    background-position: center center;
+    animation: shake 30s ease-in-out infinite;
+  }
 
   .canvas {
     position: absolute;
@@ -255,13 +272,7 @@ export default {
   }
 
   img{
-    float: left;
-    position: absolute;
-    top: 200px;
-    left: 90px;
-    width:50%;
-    background-position: center center;
-    animation: shake 30s ease-in-out infinite;
+
   }
 
   .button{
@@ -278,48 +289,108 @@ export default {
 
   }
 
-  .topic{
+  .mine{
+    float: left;
     position: absolute;
-    top: 180px;
-    left: 100px;
-    animation: shake 20s ease-in-out infinite;
+    top: 45%;
+    left: 15%;
+    width: 18%;
+  }
+
+  .music{
+    float: left;
+    position: absolute;
+    top: 45%;
+    left: 43%;
+    width: 18%;
+
+  }
+
+  .song{
+    float: left;
+    position: absolute;
+    top: 46%;
+    left: 74%;
+    width: 14%;
+
+  }
+
+  .topic{
+    float: left;
+    position: absolute;
+    top: 66%;
+    left: 27%;
+    width: 18%;
 
   }
 
   .friend{
+    float: left;
     position: absolute;
-    top: 290px;
-    left: 20px;
-    animation: shake 22s ease-in-out infinite;
+    top: 66%;
+    left: 59%;
+    width: 18%;
 
   }
+
+  .mineWord{
+    float: left;
+    position: absolute;
+    top: 56%;
+    left: 19.5%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .musicWord{
+    float: left;
+    position: absolute;
+    top: 56%;
+    left: 48%;
+    font-size: 20px;
+    font-weight: bold;
+
+  }
+
+  .songListWord{
+    float: left;
+    position: absolute;
+    top: 56%;
+    left: 74%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .topicWord{
+    float: left;
+    position: absolute;
+    top: 77%;
+    left: 30%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .friendWord{
+    float: left;
+    position: absolute;
+    top: 77%;
+    left: 63%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
 
   .radio{
     position: absolute;
     top: 220px;
     left: 280px;
-    animation: shake 10s ease-in-out infinite;
 
 
   }
 
-  .song{
-    position: absolute;
-    top: 340px;
-    left: 255px;
-    animation: shake 25s ease-in-out infinite;
 
 
 
-  }
-
-  .music{
-    position: absolute;
-    top: 365px;
-    left: 110px;
-    animation: shake 15s ease-in-out infinite;
-
-  }
 
 
   @keyframes shake {
@@ -358,9 +429,19 @@ export default {
 
 
 }
+
+
 </style>
 
+<style>
+  html{
+    background: url("../assets/starSky.jpg");
+    background-repeat: no-repeat;
+    background-size:100% 200%;
+    -moz-background-size:100% 100%;
 
+  }
+</style>
 
 
 

@@ -4,7 +4,7 @@
       <van-nav-bar title="季度话题"
                    left-arrow
                    class="header-QuarterTopic"
-                   @click-left="onClickLeft">
+                   @click-left="onClickLeft()">
       </van-nav-bar>
 
       <div class="topic">
