@@ -5,6 +5,8 @@
     <van-list>
       <van-cell v-for="value in song" v-on:click="clicklist()" class="list"><img class="play" src="../assets/play.png"><p class="font16">{{value.songName}}</p><p class="font10">{{value.author}}</p></van-cell>
     </van-list>
+
+    <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
   </div>
 </template>
 
@@ -26,7 +28,13 @@
         },
         clickLeft(){
           this.$router.push({path:'/home'});
-        }
+        },
+
+
+        toHome(){
+          this.$router.push({path:'/home'})
+        },
+
       },
         components: {},
         data() {
@@ -48,6 +56,14 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
 
   .header{
     background-color:#521D99;

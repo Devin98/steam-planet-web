@@ -251,6 +251,8 @@ export default {
   width: 100vw;
   height: 100vh;
   color: #fff;
+  background-image: url("../assets/starSky.jpg");
+  background-size:100% 100% ;
 
   .myLogo{
     float: left;
@@ -434,13 +436,13 @@ export default {
 </style>
 
 <style>
-  html{
-    background: url("../assets/starSky.jpg");
-    background-repeat: no-repeat;
-    background-size:100% 200%;
-    -moz-background-size:100% 100%;
+  /*html{*/
+    /*background: url("../assets/starSky.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size:100% 200%;*/
+    /*-moz-background-size:100% 100%;*/
 
-  }
+  /*}*/
 </style>
 
 

@@ -49,6 +49,7 @@
     </van-button>
   </div>
 
+  <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
 </div>
 </template>
@@ -122,6 +123,10 @@
 
           upLoaderAdvice(){
             console.log('上传照片成功');
+          },
+
+          toHome(){
+            this.$router.push({path:'/home'})
           }
         }
     }
@@ -132,6 +137,15 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
 
   .header{
     background-color: #521D99;

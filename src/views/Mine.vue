@@ -5,7 +5,7 @@
       </van-nav-bar>
 
       <div class="mine">
-        <img src="../assets/steam-planet-logo.png">
+        <img  class="headImg" src="../assets/steam-planet-logo.png">
         <div class="name">{{people.name}}</div>
         <div class="message">{{people.message}}</div>
         <van-icon name="records" v-model="people.name" @click="editMyInformation(people.name)"></van-icon>
@@ -14,11 +14,11 @@
 
 
       <div class="myself">
-        <div class="myPlanet" @click="toMyPlanet()">
-          <van-list>
-          <van-cell>我的星球</van-cell>
-        </van-list>
-        </div>
+        <!--<div class="myPlanet" @click="toMyPlanet()">-->
+          <!--<van-list>-->
+          <!--<van-cell>我的星球</van-cell>-->
+        <!--</van-list>-->
+        <!--</div>-->
         <div class="mySongList" @click="toMySongList()">
           <van-list>
             <van-cell>我的歌单</van-cell>
@@ -49,6 +49,9 @@
 
       <van-button class="button" size="large" @click="quit()">退出</van-button>
 
+
+
+      <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
 
 
@@ -127,6 +130,9 @@
           toAdvice(){
             this.$router.push({path:'/advice'});
             console.log('toAdvice')
+          },
+          toHome(){
+            this.$router.push({path:'/home'});
           }
 
 
@@ -154,8 +160,7 @@
     width: 100%;
     height: 113px;
 
-    img{
-
+    .headImg{
       float: left;
       width:30%;
       margin-left: 17px;
@@ -170,6 +175,7 @@
       color: black;
       margin-bottom: 10px;
     }
+
 
     .message{
       margin-top: 6px;
@@ -223,6 +229,15 @@
     margin-top: 10px;
   }
 
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    z-index: 10;
+    opacity: 0.6;
+  }
+
 </style>
 
 
@@ -241,3 +256,4 @@
 }
 
 </style>
+

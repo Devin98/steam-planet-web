@@ -64,7 +64,7 @@
 
     </div>
 
-
+    <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
   </div>
 
@@ -108,7 +108,14 @@
             this.$router.go(-1);
 
             console.log('提交');
-          }
+          },
+
+
+          toHome(){
+            this.$router.push({path:'/home'})
+          },
+
+
         }
     }
 </script>
@@ -117,6 +124,15 @@
 <style scoped lang="less">
 
 
+
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
     .header{
       background-color: #521D99;
       color: white;

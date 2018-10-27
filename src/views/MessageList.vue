@@ -19,6 +19,7 @@
 
       </div>
 
+      <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
     </div>
 </template>
@@ -47,6 +48,11 @@
             this.$router.go(-1)
           },
 
+          toHome(){
+            this.$router.push({path:'/home'})
+          },
+
+
         }
     }
 </script>
@@ -54,6 +60,15 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 
+
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
     .header-messageList{
       background-color: #521D99;
       color:white;

@@ -63,22 +63,62 @@
       {
         "id": 1,
         "body": "你在前面看风景，我在后面看你。你说风景很美，你不舍回头，我沉默的笑了笑。下雨天，你愿意淋雨，我却想为你打把伞。我把背影留给你，你却把沉默留给我。",
-        "author": "ChearUp"
+        "author": "ChearUp",
+        "likeNumber":123
       },
       {
         "id": 2,
         "body": "我要露出点小马脚来，好让你看出我喜欢你",
-        "author": "-Maggis"
+        "author": "-Maggis",
+        "likeNumber":12344
       },
       {
         "id": 3,
         "body": "Can't wait to see you",
-        "author": "看到好玩的我就转"
+        "author": "看到好玩的我就转",
+        "likeNumber":12344
       },
       {
         "id": 4,
         "body": "这是我的手背，这是我的脚背，你是我的宝贝",
-        "author": "没有昵称的Pupa"
+        "author": "没有昵称的Pupa",
+        "likeNumber":12344
+      }
+    ]
+  },
+  "currentComments": {
+    "code": 0,
+    "errReason": "",
+    "returnValue": [
+      {
+        "id": 1,
+        "body": "下雨天，你愿意淋雨，我却想为你打把伞。",
+        "author": "CfgdhdfrUp",
+        "likeNumber":12344
+      },
+      {
+        "id": 2,
+        "body": "我要露出点小马脚来，好让你看出我喜欢你",
+        "author": "-Maggis45645656",
+        "likeNumber":12344
+      },
+      {
+        "id": 3,
+        "body": "Can't wait to see you dfgdfgdfgdsf",
+        "author": "看到好玩的我就转",
+        "likeNumber":12344
+      },
+      {
+        "id": 4,
+        "body": "这是我的手背，这是我的脚背，你是我的宝贝",
+        "author": "没有昵称的Pupa",
+        "likeNumber":12344
+      },
+      {
+        "id": 5,
+        "body": " ",
+        "author": " ",
+        "likeNumber":0
       }
     ]
   },
@@ -231,10 +271,6 @@
       }
     ]
   },
-
-
-
-
 
   "profile": {
     "name": "typicode"
