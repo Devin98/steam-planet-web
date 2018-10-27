@@ -41,12 +41,12 @@
           return {
             song: [
               {songName: '阴天快乐', author: '陈奕迅'},
-              {songName: '阴天快乐', author: '陈奕迅'},
-              {songName: '阴天快乐', author: '陈奕迅'},
-              {songName: '阴天快乐', author: '陈奕迅'},
-              {songName: '阴天快乐', author: '陈奕迅'},
-              {songName: '阴天快乐', author: '陈奕迅'},
-              {songName: '阴天快乐', author: '陈奕迅'}
+              {songName: '外面的世界', author: '莫文蔚'},
+              {songName: '简情歌', author: '房东的猫'},
+              {songName: '喜欢', author: '阿肆'},
+              {songName: '闷人咖啡', author: '王菲'},
+              {songName: '多谢你', author: '陶喆'},
+              {songName: '可惜没如果', author: '林俊杰'}
             ]
           }
         },

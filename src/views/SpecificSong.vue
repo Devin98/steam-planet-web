@@ -111,12 +111,12 @@
               indexFromMusicList:'',
               songOfLike:[
                 {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'}
+                {songName:'年少有为',author:'李荣浩'},
+                {songName:'彩虹',author:'周杰伦'},
+                {songName:'当你',author:'林俊杰'},
+                {songName:'慢慢喜欢你',author:'莫文蔚'},
+                {songName:'我梦见你梦见我',author:'林宥嘉'},
+                {songName:'勿忘你',author:'林宥嘉'}
               ],
               songOfGF:[
                 {songName:'songOfGF',author:'陈奕迅'},

@@ -31,11 +31,11 @@
         data() {
             return {
               message:[
-                {name:'ghsgdja',message:'hgsjagdhjhag'},
-                {name:'dfgh',message:'dnnvb '},
-                {name:'jbv',message:'dfg'},
-                {name:'bff',message:'1ed'},
-                {name:'oj',message:'jnb'},
+                {name:'May',message:'好的'},
+                {name:'Mary',message:'一起去吃饭吧'},
+                {name:'Lily',message:'为什么啊'},
+                {name:'Rose',message:'love u' },
+                {name:'Candy',message:'I want to eat something'},
               ]
             }
         },
@@ -78,19 +78,14 @@
       .list{
 
         .headPortrait{
-
-
         }
 
         .name{
           color: #000;
-
-
         }
 
         .message{
           color: #d0d8d7;
-
         }
 
       }

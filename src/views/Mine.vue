@@ -74,11 +74,11 @@
         data() {
             return {
               people:{
-                name:'周圣洁',
+                name:'fiveJacks',
                 sex:'男',
-                address:'浙江杭州sadsd',
-                birthday:'2010-10-05',
-                message:'gjhgjhgjgjkjhgfdskjhgfdsjhgfdgdfsgdfgsdfgs',
+                address:'浙江杭州',
+                birthday:'1990-10-05',
+                message:'无敌是多么寂寞',
               }
             }
         },
