@@ -7,9 +7,9 @@
         <van-list>
           <van-cell class="list" v-for="(value,index) in message" @click="toChat(index)">
             <div class="headPortrait" >
-              <img style="width: 10%;float: left;margin-top: 10px;margin-right: 15px;"
+              <img style="width: 12%;float: left;margin-top: 10px;margin-right: 15px;"
                    class="img"
-                   src="../assets/logo.png">
+                   src="../assets/steam-planet-logo.png">
             </div>
             <span class="name"><b>{{value.name}}</b></span>
             <br>

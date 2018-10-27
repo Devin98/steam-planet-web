@@ -88,7 +88,7 @@
     name: "Topic",
     data(){
       return{
-        isWeekTopic:'1',
+        isWeekTopic:'',
         Comments:[],
         currentComments:[],
 //        Topic:'123',
@@ -109,7 +109,9 @@
 
     },
 
+
     created(){
+      this.isWeekTopic =1;
       if(this.$route.params.isWeekTopic=='0'){
         this.isWeekTopic = this.$route.params.isWeekTopic;
         console.log("isWeekTopic=0=====>"+ this.isWeekTopic);

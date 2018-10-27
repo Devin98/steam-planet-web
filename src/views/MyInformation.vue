@@ -6,7 +6,7 @@
 
     <div class="content">
 
-      <img  class="headPortrait"  src="../assets/steam-planet-logo.png" >
+      <img  class="headPortrait"  src="../assets/head(2).jpg" >
       <div style="font-size: 13px; margin-top: -12px; margin-bottom: 50px; color: black;"
            @click="changeHeadPortrait()">点击修改头像
       </div>
@@ -145,6 +145,9 @@
     .headPortrait{
       margin-top: 20px;
       width: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 10px;
     }
 
 

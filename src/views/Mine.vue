@@ -5,7 +5,7 @@
       </van-nav-bar>
 
       <div class="mine">
-        <img  class="headImg" src="../assets/steam-planet-logo.png">
+        <img  class="headImg" src="../assets/head(2).jpg">
         <div class="name">{{people.name}}</div>
         <div class="message">{{people.message}}</div>
         <van-icon name="records" v-model="people.name" @click="editMyInformation(people.name)"></van-icon>
@@ -161,10 +161,14 @@
     height: 113px;
 
     .headImg{
+      border-radius: 50%;
+      overflow: hidden;
       float: left;
-      width:30%;
-      margin-left: 17px;
+      width: 25%;
+      margin-left: 27px;
+      margin-top: 10px;
     }
+
 
     .name{
       position: absolute;

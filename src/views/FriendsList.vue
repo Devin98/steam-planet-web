@@ -7,7 +7,7 @@
     </van-nav-bar>
     <van-list>
       <van-cell class="list" v-for="(value,index) in Friends" @click="ToChat(index)">
-        <div class="Sculpture"><img src=""></div>
+        <div class="Sculpture"><img v-bind:src="value.imgUrl" style="width:100%;border-radius: 50%;overflow:hidden;"></div>
         <span class="FriendsName">{{value.FriendsName}}</span>
         <span class="Signature"><br>{{value.Signature}}</span>
       </van-cell>
@@ -109,9 +109,9 @@
     float: left;
     height: 36px;
     width: 36px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 50px;
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    /*border-radius: 50px;*/
     margin-right: 10px;
   }
 </style>

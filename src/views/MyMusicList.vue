@@ -10,9 +10,10 @@
     <div class="song">
       <van-list>
         <van-cell v-for="(value,index) in songList"   @click="ToSpecificSong(index)"  class="list">
-          <img src="../assets/logo.png" style="width: 30px;position: absolute;margin-top: 10px;">
+          <img v-bind:src="value.songUrl" style="width: 40px;position: absolute;margin-top: 10px;">
           <p style=" margin-left: 50px;" class="font16">{{value.songListName}}</p>
         </van-cell>
+
       </van-list>
 
     </div>
@@ -28,12 +29,12 @@
         data() {
             return {
               songList:[
-                {songListName:'我喜欢的'},
-                {songListName:'古风'},
-                {songListName:'嘻哈'},
-                {songListName:'我的小甜甜'},
-                {songListName:'DJ'},
-                {songListName:'轻音乐'}
+                {songListName:'我喜欢的',songUrl:'/img/MusicList1.f7dbb747.jpg'},
+                {songListName:'古风',songUrl:'/img/MusicList2.1782648f.jpg'},
+                {songListName:'嘻哈',songUrl:'/img/MusicList3.067abf20.jpg'},
+                {songListName:'我的小甜甜',songUrl:'/img/MusicList4.12e781db.jpg'},
+                {songListName:'DJ',songUrl:'/img/MusicList5.ee29fe4d.jpg'},
+                {songListName:'轻音乐',songUrl:'/img/MusicList6.4a80790e.jpg'}
 
               ],
               indexToMusicList:'',

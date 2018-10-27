@@ -7,27 +7,27 @@
       </van-nav-bar>
 
       <div class="header" v-if="indexFromMusicList=='0'">
-        <img src="../assets/cover1.jpg" style="float: left;width: 50%;margin-left:20px;margin-top:16px;">
+        <img src="../assets/MusicList1.jpg" style="float: left;width:33%;margin-left:20px;margin-top:16px;">
         <span class="title">{{title0}}</span>
       </div>
       <div class="header" v-if="indexFromMusicList=='1'">
-        <img src="../assets/cover1.jpg" style="float: left;width: 50%;margin-left:20px;margin-top:16px;">
+        <img src="../assets/MusicList2.jpg" style="float: left;width: 33%;margin-left:20px;margin-top:16px;">
         <span class="title">{{title1}}</span>
       </div>
       <div class="header" v-if="indexFromMusicList=='2'">
-        <img src="../assets/cover1.jpg" style="float: left;width: 50%;margin-left:20px;margin-top:16px;">
+        <img src="../assets/MusicList3.jpg" style="float: left;width: 33%;margin-left:20px;margin-top:16px;">
         <span class="title">{{title2}}</span>
       </div>
       <div class="header" v-if="indexFromMusicList=='3'">
-        <img src="../assets/cover1.jpg" style="float: left;width: 50%;margin-left:20px;margin-top:16px;">
+        <img src="../assets/MusicList4.jpg" style="float: left;width: 33%;margin-left:20px;margin-top:16px;">
         <span class="title">{{title3}}</span>
       </div>
       <div class="header" v-if="indexFromMusicList=='4'">
-        <img src="../assets/cover1.jpg" style="float: left;width: 50%;margin-left:20px;margin-top:16px;">
+        <img src="../assets/MusicList5.jpg" style="float: left;width: 33%;margin-left:20px;margin-top:16px;">
         <span class="title">{{title4}}</span>
       </div>
       <div class="header" v-if="indexFromMusicList=='5'">
-        <img src="../assets/cover1.jpg" style="float: left;width: 50%;margin-left:20px;margin-top:16px;">
+        <img src="../assets/MusicList6.jpg" style="float: left;width: 33%;margin-left:20px;margin-top:16px;">
         <span class="title">{{title5}}</span>
       </div>
 
@@ -119,13 +119,13 @@
                 {songName:'勿忘你',author:'林宥嘉'}
               ],
               songOfGF:[
-                {songName:'songOfGF',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'songOfGF',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'},
-                {songName:'阴天快乐',author:'陈奕迅'}
+                {songName:'离人愁',author:'李袁杰'},
+                {songName:'风筝误',author:'刘珂矣'},
+                {songName:'牵丝戏',author:'银临'},
+                {songName:'繁花',author:'董真'},
+                {songName:'长生诀',author:'西瓜JUN'},
+                {songName:'思慕',author:'郁可唯'},
+                {songName:'大鱼',author:'双笙'}
               ],
               songOfXH:[
                 {songName:'阴天快乐',author:'陈奕迅'},
@@ -249,8 +249,9 @@
     .title{
       color: black;
       position: absolute;
-      top: 25%;
-      right: 20%;
+      top: 22%;
+      right: 30%;
+      font-size: 20px;
 
     }
   }
