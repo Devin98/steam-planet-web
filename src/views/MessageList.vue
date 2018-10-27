@@ -39,7 +39,7 @@
             }
         },
         methods: {
-          toChat(index){
+            toChat(index){
             console.log(this.message[index].name);
 
           },
