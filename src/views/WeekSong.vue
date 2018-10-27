@@ -1,24 +1,13 @@
 
 <template>
   <div>
-    <van-nav-bar title="每周歌单"
-                 left-arrow
-                 class="header"
-                 @click-left="onClickLeft">
-    </van-nav-bar>
-    <van-list >
-      <van-cell v-for="(value,index) in song"
-                class="list"
-                @click="ToMusicPlay(index)">
-        <img class="play" src="../assets/play.png">
-        <p class="font16">{{value.songName}}</p>
-        <p class="font10">{{value.author}}</p>
-      </van-cell>
+    <van-nav-bar title="每周歌单"  left-arrow class="header" @click-left="clickLeft()"></van-nav-bar>
+    <van-list>
+      <van-cell v-for="value in song" v-on:click="clicklist()" class="list"><img class="play" src="../assets/play.png"><p class="font16">{{value.songName}}</p><p class="font10">{{value.author}}</p></van-cell>
     </van-list>
 
+    <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
   </div>
-
-
 </template>
 
 <script>
@@ -27,51 +16,54 @@
   import { List } from 'vant';
   import {Cell} from 'vant';
 
-
   Vue.use(List);
   Vue.use(Cell);
   Vue.use(NavBar);
 
-
     export default {
-        name: 'WeekSong',
+      name: 'WeekSong',
+      methods: {
+        clicklist() {
+          this.$router.push({path:'/MusicPlay'});//跳转
+        },
+        clickLeft(){
+          this.$router.push({path:'/home'});
+        },
 
+
+        toHome(){
+          this.$router.push({path:'/home'})
+        },
+
+      },
         components: {},
         data() {
-            return {
-              song:[]
-            }
+          return {
+            song: [
+              {songName: '阴天快乐', author: '陈奕迅'},
+              {songName: '外面的世界', author: '莫文蔚'},
+              {songName: '简情歌', author: '房东的猫'},
+              {songName: '喜欢', author: '阿肆'},
+              {songName: '闷人咖啡', author: '王菲'},
+              {songName: '多谢你', author: '陶喆'},
+              {songName: '可惜没如果', author: '林俊杰'}
+            ]
+          }
         },
-        created() {
-          this.$store.dispatch({
-            type:'music/getMusicList'
-          }).then(res=>{
-            this.song = this.$store.state.music.music_list;
-          });
-        },
-        methods: {
-          ToMusicPlay(index){
-            console.log(this.song[index].songName);
+      }
 
-            this.$store
-              .commit({
-                type: 'music/setCurrentMusic',
-                currentMusicId: this.song[index]._id,
-              });
-            this.$router.push({path:'/musicPlay'});
-          },
-
-          onClickLeft(){
-            this.$router.go(-1);
-          },
-
-
-        },
-    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
 
   .header{
     background-color:#521D99;
@@ -103,7 +95,9 @@
 
 </style>
 <style>
-
+  body{
+    background-color: #EFEFE9;
+  }
   .list{
     background-color: #FAFAFA;
   }

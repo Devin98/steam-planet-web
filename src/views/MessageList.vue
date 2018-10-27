@@ -19,6 +19,7 @@
 
       </div>
 
+      <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
     </div>
 </template>
@@ -30,11 +31,11 @@
         data() {
             return {
               message:[
-                {name:'ghsgdja',message:'hgsjagdhjhag'},
-                {name:'dfgh',message:'dnnvb '},
-                {name:'jbv',message:'dfg'},
-                {name:'bff',message:'1ed'},
-                {name:'oj',message:'jnb'},
+                {name:'May',message:'好的'},
+                {name:'Mary',message:'一起去吃饭吧'},
+                {name:'Lily',message:'为什么啊'},
+                {name:'Rose',message:'love u' },
+                {name:'Candy',message:'I want to eat something'},
               ]
             }
         },
@@ -47,6 +48,11 @@
             this.$router.go(-1)
           },
 
+          toHome(){
+            this.$router.push({path:'/home'})
+          },
+
+
         }
     }
 </script>
@@ -54,6 +60,15 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 
+
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
     .header-messageList{
       background-color: #521D99;
       color:white;
@@ -63,19 +78,14 @@
       .list{
 
         .headPortrait{
-
-
         }
 
         .name{
           color: #000;
-
-
         }
 
         .message{
           color: #d0d8d7;
-
         }
 
       }

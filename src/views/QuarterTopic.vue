@@ -4,7 +4,7 @@
       <van-nav-bar title="季度话题"
                    left-arrow
                    class="header-QuarterTopic"
-                   @click-left="onClickLeft">
+                   @click-left="onClickLeft()">
       </van-nav-bar>
 
       <div class="topic">
@@ -19,6 +19,7 @@
       </div>
 
 
+      <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
     </div>
 </template>
@@ -38,7 +39,7 @@
         data() {
             return {
               Topic:[],
-              isWeekTopic:false,
+              isWeekTopic:'',
             }
         },
         created(){
@@ -46,13 +47,18 @@
             type:'topic/getQuarterTopicList'
           }).then(res=>{
             this.Topic = this.$store.state.topic.quarter_topic_list;
-          })
+          });
+
+
+
+
         },
         methods: {
 
           toTopic(index){
-            console.log(index);
-            console.log(this.Topic[index-1].content);
+            console.log("季度话题index"+index);
+            console.log("季度话题"+this.Topic[index-1].content);
+            this.isWeekTopic = 0;
 
             this.$store
               .commit({
@@ -72,6 +78,9 @@
             this.$router.go(-1);
           },
 
+          toHome(){
+            this.$router.push({path:'/home'})
+          }
 
 
         }
@@ -84,6 +93,15 @@
   .header-QuarterTopic{
     background-color: #521D99;
     color: white;
+  }
+
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
   }
 
   .topic{

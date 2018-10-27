@@ -6,6 +6,9 @@
                    @click-left="onClickLeft">
       </van-nav-bar>
 
+
+
+
     </div>
 </template>
 
@@ -39,6 +42,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+  html{
+    background: white;
+  }
   .header-chat {
     background-color: #521D99;
     color: white;

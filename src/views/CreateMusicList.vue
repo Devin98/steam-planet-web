@@ -1,6 +1,9 @@
 <template>
-    <div style="background-color: #efefe9">
-      <van-nav-bar title="新建歌单"  left-arrow class="header-createMusicList" @click-left="onClickLeft()">
+    <div >
+      <van-nav-bar title="新建歌单"
+                   left-arrow
+                   class="header-createMusicList"
+                   @click-left="onClickLeft()">
       </van-nav-bar>
 
       <div class="content">
@@ -21,6 +24,8 @@
       <van-button size="small"
                   class="button"
                   @click="FinishCreateMusicList()">完成</van-button>
+
+      <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
     </div>
 </template>
@@ -56,7 +61,15 @@
         methods: {
           FinishCreateMusicList(){
             console.log('完成')
-          }
+          },
+          onClickLeft(){
+            this.$router.go(-1);
+          },
+
+          toHome(){
+            this.$router.push({path:'/home'})
+          },
+
         },
     }
 </script>
@@ -69,6 +82,14 @@
     color: white;
   }
 
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
   .input{
     margin-top: 10px;
     width:100%;

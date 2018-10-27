@@ -18,6 +18,7 @@
 
 **确保node环境且版本≥8**
 
+
 1. `git clone git@github.com:Devin98/steam-planet-web.git`
 1. `cd steam-planet-web`
 1. `yarn`

@@ -8,8 +8,8 @@
         right-text="往期"
         left-arrow
         :fixed="true"
-        @click-left="onClickLeft"
-        @click-right="onClickRight"
+        @click-left="onClickLeft()"
+        @click-right="onClickRight()"
       >
       </van-nav-bar>
     </div>
@@ -19,14 +19,13 @@
 
 
       <div class="topicContent"
-           v-if="!isWeekTopic">
+           v-if="isWeekTopic=='0'">
         <p>{{Topic.content}}</p>
       </div>
 
       <div class="topicContent"
-           v-if="isWeekTopic">
+           v-if="isWeekTopic=='1'">
         <p>{{weekTopic.content}}</p>
-        <!--<p>hghjgjh</p>-->
       </div>
 
     </div>
@@ -34,23 +33,44 @@
 
     <div class="hotComments">
       <p>热门评论</p>
-      <div class="comments">
+      <van-list>
+        <van-cell class="list" v-for="(value) in Comments">
+          <span class="comment">{{value.body}}</span>
+          <span class="author"><br>{{value.author}}</span>
+          <div>
+            <van-icon id="like" name="like" class="like"></van-icon>
+            <span class="likeNumber">{{value.likeNumber}}</span>
+          </div>
+        </van-cell>
+      </van-list>
 
-      </div>
     </div>
 
 
     <div class="timeComments">
       <p>实时评论</p>
-      <div class="comments">
+      <van-list>
+        <van-cell class="list" v-for="(value) in currentComments">
+          <span class="comment">{{value.body}}</span>
+          <span class="author"><br>{{value.author}}</span>
+          <div>
+            <van-icon id="like" name="like" class="like"></van-icon>
+            <span class="likeNumber">{{value.likeNumber}}</span>
+          </div>
 
-      </div>
+        </van-cell>
+      </van-list>
     </div>
     <div class="publish">
       <van-field placeholder="请输入评论">
 
       </van-field>
     </div>
+
+    <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
+
+
+
 
   </div>
 </template>
@@ -68,7 +88,9 @@
     name: "Topic",
     data(){
       return{
-        isWeekTopic:'',
+        isWeekTopic:'1',
+        Comments:[],
+        currentComments:[],
 //        Topic:'123',
 //        weekTopic:'',
       }
@@ -88,7 +110,31 @@
     },
 
     created(){
-      this.isWeekTopic = this.$route.params.isWeekTopic;
+      if(this.$route.params.isWeekTopic=='0'){
+        this.isWeekTopic = this.$route.params.isWeekTopic;
+        console.log("isWeekTopic=0=====>"+ this.isWeekTopic);
+
+      }
+      else {
+        this.isWeekTopic =1;
+        console.log("isWeekTopic=1======>"+ this.isWeekTopic);
+      }
+
+
+
+      this.$store.dispatch({
+        type:'comment/getCommentList'
+      }).then(res=>{
+        this.Comments = this.$store.state.comment.comment_list;
+      });
+
+      this.$store.dispatch({
+        type:'comment/getCurrentCommentList'
+      }).then(res=>{
+        this.currentComments = this.$store.state.comment.cur_comment_list;
+      });
+
+
     },
 
     methods: {
@@ -98,6 +144,9 @@
       onClickRight() {
         this.$router.push({path:'/quarterTopic'})
 
+      },
+      toHome(){
+        this.$router.push({path:'/home'})
       }
     },
 
@@ -149,6 +198,35 @@
     height: 300px;
   }
 
+  .comment{
+    font-size: 15px;
+  }
+
+  .author{
+    font-size: 8px;
+  }
+
+  .like{
+    /*position: absolute;*/
+    color: red;
+    /*left: 83%;*/
+    /*!*margin-top: 9px;*!*/
+    font-size: 16px;
+    margin-left: 80%;
+    margin-top: 5px;
+  }
+
+  .likeNumber{
+    margin-left: 5px;
+  }
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
   .publish {
     border-top: 2px #EFEFE9 solid;
     position: fixed;

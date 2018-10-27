@@ -2,9 +2,11 @@
     <div>
       <van-nav-bar title="我的问卷" left-arrow class="header-questionnaire" @click-left="onClickLeft()">
       </van-nav-bar>
+      <iframe  name="myiframe" scrolling="no" class="wj"  width="100%" src="http://renderer.rabbitpre.com/m2/aUe1ZjE1Rs?mobile=1">
+      </iframe>
 
+      <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
 
-      <h1>我的问卷！！！</h1>
     </div>
 </template>
 
@@ -19,6 +21,10 @@
           onClickLeft(){
             this.$router.go(-1);
           },
+          toHome(){
+            this.$router.push({path:'/home'})
+          },
+
         }
     }
 </script>
@@ -30,4 +36,16 @@
     color:white;
   }
 
+  .toHome{
+    width: 60px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 400;
+    opacity: 0.6;
+  }
+
+  .wj{
+    height: -webkit-fill-available;
+  }
 </style>

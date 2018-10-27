@@ -20,6 +20,7 @@
         </van-list>
       </div>
 
+      <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
     </div>
 </template>
 
@@ -39,23 +40,38 @@
         data() {
             return {
               myLikes:[
-                {topicContent:'是擦干的 v 会觉得 v',commentContent:'ascfahgchagf',author:'俞淑敏',likeNumber:1234},
-                {topicContent:'是擦干的 v 会觉得 v',commentContent:'aschagf',author:'俞淑敏',likeNumber:1200},
-                {topicContent:'是擦干的 v 会觉得 v',commentContent:'asohgfcxzaadhagf',author:'俞淑敏2',likeNumber:1211},
-                {topicContent:'是擦干的 v 会觉得 v',commentContent:'ascf544545hagf',author:'俞淑敏3',likeNumber:1000},
+                {topicContent:'暗恋一个人的时候，会有哪些心理或行为',commentContent:'不自觉的紧张或小心翼翼',author:'Lisa',likeNumber:899},
+                {topicContent:'为了梦想，你做过什么拼命的事',commentContent:'连续三天通宵',author:'AmyZ',likeNumber:481},
+                {topicContent:'如何温柔含蓄地说我喜欢你',commentContent:'-你今天好奇怪啊 -为什么？ -怪可爱的',author:'Cheese',likeNumber:1211},
+                {topicContent:'哪个瞬间你觉得对方情商很高',commentContent:'宿舍无人回答时，他迅速接下话题',author:'Alice',likeNumber:1001},
               ]
             }
         },
         methods: {
           onClickLeft(){
             this.$router.go(-1);
-          }
+          },
+
+          toHome(){
+            this.$router.push({path:'/home'})
+          },
+
         }
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+
+  .toHome{
+    width: 50px;
+    position: absolute;
+    left: 80%;
+    top: 55%;
+    z-index: 10;
+    opacity: 0.6;
+  }
+
   .header-MyLikes{
     background-color: #521D99;
     color: white;
@@ -90,8 +106,6 @@
       margin-left: 5px;
       position: absolute;
       top: 62%;
-
-
     }
 
   }
