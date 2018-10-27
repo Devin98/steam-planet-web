@@ -31,11 +31,10 @@
         data() {
             return {
               message:[
-                {name:'May',message:'好的'},
-                {name:'Mary',message:'一起去吃饭吧'},
-                {name:'Lily',message:'为什么啊'},
-                {name:'Rose',message:'love u' },
-                {name:'Candy',message:'I want to eat something'},
+                {name:'Steam Planet',message:'今日份推送请查收'},
+                {name:'Steam Planet',message:'您收到一份小心心'},
+                {name:'Steam Planet',message:'系统将于本月10号进行维护，带来不便，敬请谅解'},
+                {name:'Steam Planet',message:'欢迎来到一笼星球，很高兴遇见你'},
               ]
             }
         },
