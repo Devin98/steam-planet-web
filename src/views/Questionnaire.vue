@@ -2,7 +2,7 @@
     <div>
       <van-nav-bar title="我的问卷" left-arrow class="header-questionnaire" @click-left="onClickLeft()">
       </van-nav-bar>
-      <iframe  name="myiframe" scrolling="no" class="wj"  width="100%" src="http://renderer.rabbitpre.com/m2/aUe1ZjE1Rs?mobile=1">
+      <iframe  name="myiframe" scrolling="no" class="wj"  width="100%" src="http://a3.rabbitpre.com/m2/aUe1ZjE1Rs">
       </iframe>
 
       <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">

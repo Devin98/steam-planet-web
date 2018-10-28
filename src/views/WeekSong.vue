@@ -3,7 +3,11 @@
   <div>
     <van-nav-bar title="每周歌单"  left-arrow class="header" @click-left="clickLeft()"></van-nav-bar>
     <van-list>
-      <van-cell v-for="value in song" v-on:click="clicklist()" class="list"><img class="play" src="../assets/play.png"><p class="font16">{{value.songName}}</p><p class="font10">{{value.author}}</p></van-cell>
+      <van-cell v-for="(value,index) in song" v-on:click="clicklist(index)" class="list">
+        <img class="play" src="../assets/play.png">
+        <p class="font16">{{value.songName}}</p>
+        <p class="font10">{{value.author}}</p>
+      </van-cell>
     </van-list>
 
     <img src="../assets/steam-planet-logo.png" class="toHome" @click="toHome()">
@@ -23,7 +27,12 @@
     export default {
       name: 'WeekSong',
       methods: {
-        clicklist() {
+        clicklist(index) {
+          this.$store
+            .commit({
+              type:'music/setCurrentMusic',
+              currentMusicId:this.song[index]._id,
+            });
           this.$router.push({path:'/MusicPlay'});//跳转
         },
         clickLeft(){
@@ -39,17 +48,19 @@
         components: {},
         data() {
           return {
-            song: [
-              {songName: '阴天快乐', author: '陈奕迅'},
-              {songName: '外面的世界', author: '莫文蔚'},
-              {songName: '简情歌', author: '房东的猫'},
-              {songName: '喜欢', author: '阿肆'},
-              {songName: '闷人咖啡', author: '王菲'},
-              {songName: '多谢你', author: '陶喆'},
-              {songName: '可惜没如果', author: '林俊杰'}
-            ]
+            song: []
           }
         },
+
+      created(){
+        this.$store.dispatch({
+          type:'music/getMusicList'
+        }).then(res=>{
+          this.song = this.$store.state.music.music_list
+        });
+
+      },
+
       }
 
 </script>

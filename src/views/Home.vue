@@ -40,6 +40,7 @@ export default {
     return {
       weekTopic:'',
       isWeekTopic:true,
+      song: [],
     };
   },
 //  mounted() {
@@ -207,6 +208,12 @@ export default {
       this.weekTopic = this.$store.state.topic.week_topic;
       console.log(this.weekTopic);
     });
+
+    this.$store.dispatch({
+      type:'music/getMusicList'
+    }).then(res=>{
+      this.song = this.$store.state.music.music_list
+    });
   },
   methods: {
     ToMy(){
@@ -220,8 +227,14 @@ export default {
 
     },
     ToMusic(){
-
+      this.$store
+        .commit({
+          type:'music/setCurrentMusic',
+          currentMusicId:this.song[1]._id,
+        });
+      this.$router.push({path:'/musicPlay'});
     },
+
     ToWeekTopic(){
       this.$store
         .commit({

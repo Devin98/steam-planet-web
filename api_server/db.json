@@ -165,37 +165,44 @@
       {
         "_id": "1",
         "songName": "阴天快乐",
-        "author": "陈奕迅"
+        "author": "陈奕迅",
+        "url":"https://m8.music.126.net/20181027213958/f11138e1ab3bdce62cf55d148c4996ea/ymusic/49ec/0b86/0211/d4b979e1a065491a4f56f0248dbad05d.mp3"
       },
       {
         "_id": "2",
-        "songName": "年少有为",
-        "author": "李荣浩"
+        "songName": "夜空中最亮的星",
+        "author": "逃跑计划",
+        "url":"https://m7.music.126.net/20181027213023/deb2d03dcc790e06be4b209fcc5deab2/ymusic/67a7/1920/cad6/a19f11f01c2fc0c7ead033b2ace15eb7.mp3"
       },
       {
         "_id": "3",
         "songName": "借我",
-        "author": "谢春花"
+        "author": "谢春花",
+        "url":"https://m7.music.126.net/20181027214242/e0360409ca40a2ceea45fda49f862b3f/ymusic/6f52/5c4e/f802/afac355d40a1834ca87638eeef6579ce.mp3"
       },
       {
         "_id": "4",
         "songName": "可不可以",
-        "author": "张紫豪"
+        "author": "张紫豪",
+        "url":"https://m8.music.126.net/20181027214351/095552c7b32735abaa93235ba8a5c7bb/ymusic/341e/9cc2/7c4f/b13ac6e62d3625524dde95fd1b1628bf.mp3"
       },
       {
         "_id": "5",
         "songName": "陷阱",
-        "author": "王北车"
+        "author": "王北车",
+        "url":"https://m8.music.126.net/20181027214421/fd0772477bd9a19a57652d8941be6522/ymusic/2e28/b752/5718/481c8dddd7d5e58e89db8c3b2ec06eef.mp3"
       },
       {
         "_id": "6",
         "songName": "平凡之路",
-        "author": "朴树"
+        "author": "朴树",
+        "url":"https://m8.music.126.net/20181027214459/ab2716cb6679960de8b751f5a3eaa1f0/ymusic/5dde/f2d3/3dba/0a0914dcd1585247b58938a3a7afd925.mp3"
       },
       {
         "_id": "7",
         "songName": "岁月神偷",
-        "author": "金玟岐"
+        "author": "金玟岐",
+        "url":"https://m8.music.126.net/20181027214552/7c28b72e697d3ce061cf182dff9ae5c1/ymusic/b562/ac47/bffa/92f3b63f0e4949e48e55624d9c4e55d8.mp3"
       }
     ]
   },

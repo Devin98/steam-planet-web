@@ -133,6 +133,11 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
   .home{
+    width: 100vw;
+    height: 100vh;
+    color: #fff;
+    background-image: url("../assets/starSky.jpg");
+    background-size:100% 100% ;
 
     .login-header{
       position: absolute;
@@ -258,10 +263,7 @@
 
 <style>
   html{
-    background: url("../assets/starSky.jpg");
-    background-repeat: no-repeat;
-    background-size:100% 200%;
-    -moz-background-size:100% 100%;
+
 
   }
 

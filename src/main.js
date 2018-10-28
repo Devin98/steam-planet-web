@@ -4,9 +4,11 @@ import router from "./router";
 import store from "./store";
 import axios from "axios";
 import "./registerServiceWorker";
+import MuseUI from 'muse-ui';
+import 'muse-ui/dist/muse-ui.css';
 
 Vue.config.productionTip = false;
-
+Vue.use(MuseUI);
 new Vue({
   router,
   store,
